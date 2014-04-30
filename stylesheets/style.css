@@ -2,6 +2,19 @@
 * {
   margin: 0; }
 
+h1 {
+  color: #2c5bc4;
+  font-size: 24px;
+  font-family: "Montserrat", Helvetica, sans-serif;
+  letter-spacing: 8px;
+  padding-bottom: 15px; }
+
+.regular-text {
+  color: #848484;
+  font-family: "Tahoma", Arial, sans-serif;
+  font-size: 18px;
+  line-height: 24px; }
+
 html {
   cursor: default;
   height: 100%; }
@@ -164,6 +177,8 @@ body {
 /**-------- MAIN PAGE CONTENT HERE -------**/
 /*** start page ***/
 #start-container {
+  /** STARTHIDDEN **/
+  display: none;
   width: 100%;
   height: 100%;
   position: fixed;
@@ -177,3 +192,119 @@ body {
   background-image: url("../ggposter.jpg"); }
 
 /*** end start ***/
+/*** about page ***/
+#about-container {
+  width: 100%;
+  height: 600px;
+  /*	background: white;*/ }
+
+#about-content {
+  width: 800px;
+  height: 350px;
+  /*	background: black;*/
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 70px; }
+
+#about-main {
+  width: 780px;
+  height: 305px;
+  /*	background: gray;*/
+  padding: 10px; }
+
+#about-pic {
+  position: absolute;
+  z-index: 4; }
+
+#about-pic-padding-square {
+  position: absolute;
+  z-index: 3;
+  height: 300px;
+  width: 200px;
+  background: #2c2c2d; }
+
+#about-pic-padding {
+  margin-left: -22px;
+  margin-top: -22px;
+  position: absolute;
+  border-radius: 175px;
+  z-index: 3;
+  height: 350px;
+  width: 350px;
+  background: #2c2c2d; }
+
+#about-text-content {
+  margin-top: 3px;
+  margin-left: 250px;
+  float: left;
+  position: relative;
+  z-index: 2;
+  width: 360px;
+  height: 240px;
+  background: #101011;
+  padding: 30px;
+  padding-left: 140px; }
+
+#about-text {
+  padding-bottom: 20px; }
+
+#contact-info {
+  padding-top: 10px; }
+
+#email-img {
+  float: left;
+  padding-right: 20px; }
+
+#email-text {
+  padding-top: 2px;
+  float: left; }
+
+#email {
+  height: 30px;
+  font-size: 15px;
+  color: #565656;
+  font-family: "Tahoma", Arial, sans-serif;
+  -webkit-transition: text-shadow 0.2s linear;
+  -moz-transition: text-shadow 0.2s linear;
+  -ms-transition: text-shadow 0.2s linear;
+  -o-transition: text-shadow 0.2s linear;
+  transition: text-shadow 0.2s linear;
+  -webkit-transition: color 0.2s linear;
+  -moz-transition: color 0.2s linear;
+  -ms-transition: color 0.2s linear;
+  -o-transition: color 0.2s linear;
+  transition: color 0.2s linear; }
+
+#email:hover {
+  text-shadow: 0 0 10px #848484;
+  color: #848484; }
+
+#phone {
+  font-size: 15px;
+  height: 20px;
+  color: #565656;
+  font-family: "Tahoma", Arial, sans-serif;
+  -webkit-transition: text-shadow 0.2s linear;
+  -moz-transition: text-shadow 0.2s linear;
+  -ms-transition: text-shadow 0.2s linear;
+  -o-transition: text-shadow 0.2s linear;
+  transition: text-shadow 0.2s linear;
+  -webkit-transition: color 0.2s linear;
+  -moz-transition: color 0.2s linear;
+  -ms-transition: color 0.2s linear;
+  -o-transition: color 0.2s linear;
+  transition: color 0.2s linear; }
+
+#phone-text {
+  float: left;
+  padding-top: 2px; }
+
+#phone-img {
+  float: left;
+  padding-right: 20px; }
+
+#phone:hover {
+  text-shadow: 0 0 10px #848484;
+  color: #848484; }
+
+/*** end about page ***/

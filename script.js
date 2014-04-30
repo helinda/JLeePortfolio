@@ -47,7 +47,7 @@ function ridNavHelp() {
 
 /** open ABOUT view **/
 function openAboutView() {
-
+	$('').
 }
 
 
@@ -56,8 +56,12 @@ function openAboutView() {
 
 $(document).ready(function(){
 
-window.setTimeout(useNavHelp,1000);
-window.setTimeout(slowBounceNav, 2000);
+/*    window.setTimeout(useNavHelp,1000);
+    window.setTimeout(slowBounceNav, 2000);
+
+    $('#footer-helper').click(function() {
+	    ridNavHelp();
+    });*/
 
 });
 
