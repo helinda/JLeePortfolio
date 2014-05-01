@@ -9,11 +9,29 @@ h1 {
   letter-spacing: 8px;
   padding-bottom: 15px; }
 
+a {
+  -webkit-transition: color 0.2s linear;
+  -moz-transition: color 0.2s linear;
+  -ms-transition: color 0.2s linear;
+  -o-transition: color 0.2s linear;
+  transition: color 0.2s linear;
+  -webkit-transition: text-shadow 0.2s linear;
+  -moz-transition: text-shadow 0.2s linear;
+  -ms-transition: text-shadow 0.2s linear;
+  -o-transition: text-shadow 0.2s linear;
+  transition: text-shadow 0.2s linear;
+  color: #565656;
+  text-decoration: none; }
+
+a:hover {
+  color: #848484;
+  text-shadow: 0 0 10px #848484; }
+
 .regular-text {
   color: #848484;
-  font-family: "Tahoma", Arial, sans-serif;
-  font-size: 18px;
-  line-height: 24px; }
+  font-family: "Open Sans", Arial, sans-serif;
+  font-size: 12px;
+  line-height: 20px; }
 
 html {
   cursor: default;
@@ -66,10 +84,10 @@ body {
     font-size: 42px;
     letter-spacing: 15px; }
   #nav-content-wrapper #title {
-    font: 100% "Tahoma", Arial, sans-serif;
-    color: #848484;
-    font-size: 17px;
-    letter-spacing: 1px; }
+    font: 100% "Open Sans", Arial, sans-serif;
+    color: #afafaf;
+    font-size: 15px;
+    letter-spacing: 1.5px; }
 
 #nav-triangle {
   width: 0;
@@ -100,7 +118,7 @@ body {
   /*	padding-top: 20px;*/
   color: white;
   font-size: 10px;
-  font-family: "Tahoma", Arial, sans-serif;
+  font-family: "Open Sans", Arial, sans-serif;
   text-align: center; }
 
 #nav-triangle-container {
@@ -154,7 +172,7 @@ body {
   background: #252526;
   float: left;
   margin: 0 10px 10px 0px;
-  font: 100% "Tahoma", Arial, sans-serif;
+  font: 100% "Open Sans", Arial, sans-serif;
   color: #2c5bc4;
   font-size: 32px;
   text-align: center; }
@@ -173,8 +191,11 @@ body {
 #second-layer {
   float: left; }
 
+.blue-text {
+  color: #0b7aff; }
+
 /* end navigation bar */
-/**-------- MAIN PAGE CONTENT HERE -------**/
+/**--------           MAIN PAGE CONTENT HERE        -------**/
 /*** start page ***/
 #start-container {
   /** STARTHIDDEN **/
@@ -194,15 +215,20 @@ body {
 /*** end start ***/
 /*** about page ***/
 #about-container {
+  z-index: 0;
+  position: absolute;
+  display: none;
   width: 100%;
   height: 600px;
   /*	background: white;*/ }
 
 #about-content {
+  position: absolute;
   width: 800px;
   height: 350px;
   /*	background: black;*/
   margin-left: auto;
+  left: -800px;
   margin-right: auto;
   padding-top: 70px; }
 
@@ -210,7 +236,7 @@ body {
   width: 780px;
   height: 305px;
   /*	background: gray;*/
-  padding: 10px; }
+  padding: 10px 0px 10px 0px; }
 
 #about-pic {
   position: absolute;
@@ -239,17 +265,17 @@ body {
   float: left;
   position: relative;
   z-index: 2;
-  width: 360px;
-  height: 240px;
+  width: 380px;
+  height: 250px;
   background: #101011;
-  padding: 30px;
+  padding: 35px;
   padding-left: 140px; }
 
 #about-text {
-  padding-bottom: 20px; }
+  padding-bottom: 10px; }
 
 #contact-info {
-  padding-top: 10px; }
+  padding-top: 5px; }
 
 #email-img {
   float: left;
@@ -261,9 +287,10 @@ body {
 
 #email {
   height: 30px;
-  font-size: 15px;
+  width: 215px;
+  font-size: 14px;
   color: #565656;
-  font-family: "Tahoma", Arial, sans-serif;
+  font-family: "Open Sans", Arial, sans-serif;
   -webkit-transition: text-shadow 0.2s linear;
   -moz-transition: text-shadow 0.2s linear;
   -ms-transition: text-shadow 0.2s linear;
@@ -280,10 +307,11 @@ body {
   color: #848484; }
 
 #phone {
-  font-size: 15px;
+  font-size: 14px;
   height: 20px;
+  width: 200px;
   color: #565656;
-  font-family: "Tahoma", Arial, sans-serif;
+  font-family: "Open Sans", Arial, sans-serif;
   -webkit-transition: text-shadow 0.2s linear;
   -moz-transition: text-shadow 0.2s linear;
   -ms-transition: text-shadow 0.2s linear;
@@ -308,3 +336,145 @@ body {
   color: #848484; }
 
 /*** end about page ***/
+/***------------ begin work page -----------***/
+#work-container-boss {
+  display: none; }
+
+#work-container {
+  width: 100%;
+  position: absolute;
+  z-index: 0;
+  /*	position: absolute;*/
+  height: 400px;
+  top: -400px; }
+
+#work-content {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 60px;
+  width: 700px;
+  height: 340px; }
+
+#work-title-container {
+  opacity: 0.7;
+  background: #101011;
+  width: 150px;
+  padding-top: 10px;
+  padding-left: 30px;
+  height: 40px;
+  float: left; }
+
+#work-title-triangle {
+  width: 0;
+  height: 0;
+  border-bottom: 50px solid #101011;
+  border-right: 50px solid transparent;
+  opacity: 0.7;
+  float: left; }
+
+#games-container {
+  float: left;
+  margin: 10px 0px 20px -50px;
+  width: 700px;
+  height: 260px;
+  padding: 10px; }
+
+.game-box {
+  float: left;
+  height: 240px;
+  width: 320px;
+  margin: 10px 20px 10px 10px; }
+
+#gg-container {
+  -webkit-transition: text-shadow 0.2s linear;
+  -moz-transition: text-shadow 0.2s linear;
+  -ms-transition: text-shadow 0.2s linear;
+  -o-transition: text-shadow 0.2s linear;
+  transition: text-shadow 0.2s linear;
+  -webkit-transition: all 0.2s linear;
+  -moz-transition: all 0.2s linear;
+  -ms-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+  background-image: url("../griefforglory.png");
+  background-position: center;
+  width: 320px;
+  height: 240px; }
+
+#gg-container:hover {
+  -webkit-box-shadow: 0 0 15px #3981ea;
+  -moz-box-shadow: 0 0 15px #3981ea;
+  box-shadow: 0 0 15px #3981ea;
+  -webkit-transition: all 0.2s linear;
+  -moz-transition: all 0.2s linear;
+  -ms-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+  text-shadow: 0 0 10px #3981ea;
+  color: #3981ea;
+  cursor: pointer; }
+  #gg-container:hover .game-genre {
+    color: #3981ea; }
+
+#cow-container {
+  -webkit-transition: text-shadow 0.2s linear;
+  -moz-transition: text-shadow 0.2s linear;
+  -ms-transition: text-shadow 0.2s linear;
+  -o-transition: text-shadow 0.2s linear;
+  transition: text-shadow 0.2s linear;
+  -webkit-transition: all 0.2s linear;
+  -moz-transition: all 0.2s linear;
+  -ms-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+  background-image: url("../cogsofwar.png");
+  background-position: center;
+  width: 320px;
+  height: 240px; }
+
+#cow-text-container {
+  position: relative;
+  width: 320px;
+  height: 70px;
+  background: #101011;
+  opacity: 0.7; }
+
+#cow-container:hover {
+  -webkit-box-shadow: 0 0 15px #3981ea;
+  -moz-box-shadow: 0 0 15px #3981ea;
+  box-shadow: 0 0 15px #3981ea;
+  -webkit-transition: all 0.2s linear;
+  -moz-transition: all 0.2s linear;
+  -ms-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+  text-shadow: 0 0 10px #3981ea;
+  color: #3981ea;
+  cursor: pointer; }
+
+.game-text-container {
+  position: relative;
+  width: 290px;
+  height: 50px;
+  padding: 10px;
+  padding-left: 20px;
+  background: #101011;
+  opacity: 0.7; }
+
+.clear-box {
+  height: 170px;
+  width: 320px; }
+
+.game-genre {
+  -webkit-transition: color 0.2s linear;
+  -moz-transition: color 0.2s linear;
+  -ms-transition: color 0.2s linear;
+  -o-transition: color 0.2s linear;
+  transition: color 0.2s linear;
+  color: #2c5bc4;
+  font-family: "Open Sans", Arial, sans-serif; }
+
+.game-title {
+  color: white;
+  font-family: "Open Sans", Arial, sans-serif;
+  font-size: 18px; }

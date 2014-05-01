@@ -16,7 +16,7 @@ $bright-blue: #0b7aff;
 
    //fonts
 $title-font: "Montserrat", Helvetica, sans-serif;
-$text-font: "Tahoma", Arial, sans-serif;
+$text-font: "Open Sans", Arial, sans-serif;
 
 $title-size: 42px;
 $text-size: 17px;
@@ -60,10 +60,31 @@ $margin-right: 160px;
     transition: background 0.2s linear;
 }
 
+@mixin boxshadow-hover-effect {
+    -webkit-transition: all 0.2s linear;
+    -moz-transition: all 0.2s linear;
+    -ms-transition: all 0.2s linear;
+    -o-transition: all 0.2s linear;
+    transition: all 0.2s linear;
+
+}
+
+@mixin boxshadow-hover {
+    -webkit-box-shadow:0 0 15px $light-blue; 
+    -moz-box-shadow: 0 0 15px $light-blue; 
+    box-shadow:0 0 15px $light-blue;
+    -webkit-transition: all 0.2s linear;
+    -moz-transition: all 0.2s linear;
+    -ms-transition: all 0.2s linear;
+    -o-transition: all 0.2s linear;
+    transition: all 0.2s linear; 
+}
 
 * {
 	margin: 0;
 }
+
+
 
 h1 {
 	color: $primary-blue;
@@ -73,11 +94,24 @@ h1 {
 	padding-bottom: 15px;
 }
 
+a {
+    	@include text-hover-effect;
+	@include shadow-hover-effect;
+	color: $light-grey;
+	text-decoration: none;
+}
+
+a:hover {
+	color: $font-grey;
+	text-shadow: 0 0 10px $font-grey;
+	
+}
+
 .regular-text {
 	color: $font-grey;
 	font-family: $text-font;
-	font-size: 18px;
-	line-height: 24px;
+	font-size: 12px;
+	line-height: 20px;
 }
 
 html {
@@ -149,9 +183,9 @@ body {
 
 	#title {
 	    font: 100% $text-font;
-	    color: $font-grey;
-	    font-size: $text-size;
-	    letter-spacing: 1px;
+	    color: #afafaf;
+	    font-size: $text-size - 2px;
+	    letter-spacing: 1.5px;
 	}
 
 }
@@ -245,6 +279,7 @@ $margin-right-modified: $margin-right - 20px;
 	text-align: center;
 }
 
+
 .nav-bt:hover {
 	text-shadow: 0 0 10px $bright-blue;
 	color: $light-blue;
@@ -263,6 +298,10 @@ $margin-right-modified: $margin-right - 20px;
 	float: left;
 }
 
+.blue-text {
+	color: $bright-blue;
+}
+
 
 
 
@@ -270,7 +309,7 @@ $margin-right-modified: $margin-right - 20px;
 /* end navigation bar */
 
 
-/**-------- MAIN PAGE CONTENT HERE -------**/
+/**--------           MAIN PAGE CONTENT HERE        -------**/
 
 
 /*** start page ***/
@@ -299,16 +338,21 @@ $margin-right-modified: $margin-right - 20px;
 /*** about page ***/
 
 #about-container {
+    	z-index: 0;
+    	position: absolute;
+    	display: none;
 	width: 100%;
 	height: 600px;
 /*	background: white;*/
 }
 
 #about-content {
+    	position: absolute;
 	width: 800px;
 	height: 350px;
 /*	background: black;*/
 	margin-left: auto;
+	left: -800px;
 	margin-right: auto;
 	padding-top: 70px;
 }
@@ -317,7 +361,7 @@ $margin-right-modified: $margin-right - 20px;
 	width: 780px;
 	height: 305px;
 /*	background: gray;*/
-	padding: 10px;
+	padding: 10px 0px 10px 0px;
 }
 
 #about-pic {
@@ -350,19 +394,19 @@ $margin-right-modified: $margin-right - 20px;
 	float: left;
 	position: relative;
 	z-index: 2;
-	width: 360px;
-	height: 240px;
+	width: 380px;
+	height: 250px;
 	background: $dark-grey;
-	padding: 30px;
+	padding: 35px;
 	padding-left: 140px;
 }
 
 #about-text {
-	padding-bottom: 20px;
+	padding-bottom: 10px;
 }
 
 #contact-info {
-	padding-top: 10px;
+	padding-top: 5px;
 }
 
 #email-img {
@@ -377,7 +421,8 @@ $margin-right-modified: $margin-right - 20px;
 
 #email {
 	height: 30px;
-    	font-size: 15px;
+	width:215px;
+    	font-size: 14px;
 	color: $light-grey;
 	font-family: $text-font;
 	@include shadow-hover-effect;
@@ -391,8 +436,9 @@ $margin-right-modified: $margin-right - 20px;
 }
 
 #phone {
-        font-size: 15px;
+        font-size: 14px;
 	height: 20px;
+	width: 200px;
 	color: $light-grey;
 	font-family: $text-font;
 	@include shadow-hover-effect;
@@ -420,3 +466,138 @@ $margin-right-modified: $margin-right - 20px;
 /*** end about page ***/
 
 
+/***------------ begin work page -----------***/
+
+#work-container-boss {
+	display: none;
+}
+
+#work-container {
+	width: 100%;
+    	position: absolute;
+	z-index: 0;
+/*	position: absolute;*/
+//	background: white;
+	height: 400px;
+	top: -400px;
+}
+
+#work-content {
+    	margin-left: auto;
+	margin-right: auto;
+	margin-top: 60px;
+	width: 700px;
+	height: 340px;
+//	background: gray;
+}
+
+#work-title-container {
+
+	opacity: $light-opacity;
+	background: $dark-grey;
+	width: 150px;
+	padding-top: 10px;
+	padding-left: 30px;
+	height: 40px;
+	float: left;
+}
+
+#work-title-triangle {
+	width: 0;
+	height: 0;
+	border-bottom: 50px solid $dark-grey;
+	border-right: 50px solid transparent;
+	opacity: $light-opacity;
+	float: left;
+}
+
+#games-container {
+    	float: left;
+	margin: 10px 0px 20px -50px;
+	width: 700px;
+	height: 260px;
+//	background: black;
+	padding: 10px;
+}
+
+.game-box {
+	float: left;
+	height: 240px;
+	width: 320px; 
+	margin: 10px 20px 10px 10px;
+//	background: grey;	
+}
+
+#gg-container {
+	@include shadow-hover-effect;
+	@include boxshadow-hover-effect;
+	background-image: url("../griefforglory.png");
+	background-position: center;
+	width: 320px;
+	height: 240px;
+}
+
+#gg-container:hover {
+    	@include boxshadow-hover;
+   	text-shadow: 0 0 10px $light-blue;
+	color: $light-blue;
+//	background: $button-hover-grey; 
+	cursor: pointer;
+
+	.game-genre {
+	    color: $light-blue;
+	}
+}
+
+#cow-container {
+	@include shadow-hover-effect;
+	@include boxshadow-hover-effect;
+
+	background-image: url("../cogsofwar.png");
+	background-position: center;
+	width: 320px;
+	height: 240px;
+}
+
+#cow-text-container {
+    	position: relative;
+	width: 320px;
+	height: 70px;
+	background: $dark-grey;
+	opacity: $light-opacity;
+}
+
+#cow-container:hover {
+    	@include boxshadow-hover;
+	text-shadow: 0 0 10px $light-blue;
+	color: $light-blue;
+//	background: $button-hover-grey; 
+	cursor: pointer;
+}
+
+.game-text-container {
+    	position: relative;
+	width: 290px;
+	height: 50px;
+	padding: 10px;
+	padding-left: 20px;
+	background: $dark-grey;
+	opacity: $light-opacity;
+}
+
+.clear-box {
+    	height: 240px - 70px;
+	width:320px;
+}
+
+.game-genre {
+    	@include text-hover-effect;
+	color: $primary-blue;
+	font-family: $text-font;
+}
+
+.game-title {
+	color: white;
+	font-family: $text-font;
+	font-size: 18px;
+}

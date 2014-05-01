@@ -4,8 +4,10 @@
         <title>Jay Lee | Game Development Portfolio</title>
         <link rel="stylesheet" href="stylesheets/style.css" media="screen" type="text/css"/>
 	<link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 	<script src="jquery-1.11.0.min.js"></script>
 	<script src="script.js"></script>
+	<script src="jquery.zclip.min.js"></script>
 
 </head>
 <body>
@@ -30,40 +32,79 @@
 
 		    <!-- about page begin -->
 		    <div id ="about-container">
-			<div id="about-content">
-			    <div id="about-main">
-				<div id="about-pic"><img src="jleepic.png"></div>
-			
-				<div id="about-pic-padding-square"></div>
-
-				<div id="about-pic-padding"></div>
-				<div id="about-text-content">
-				    <h1>ABOUT</h1>
-				    <div id="about-text">
-					<div class="regular-text">My name is Jay Lee and I like butts. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div></div>
-
-				    <div id="contact-info">
-					<div id ="email">
-					    <div id ="email-img"><img src="mail-icon.png"></div>
-					    <div id="email-text">jlee@someemail.com</div>
-					</div>
-					<div id ="phone">
-					    <div id ="phone-img"><img src="phone-icon.png"></div>
-					    <div id="phone-text">(203) 313-8375</div>
-
-					</div>
+				<div id="about-content">
+					<div id="about-main">
+						<div id="about-pic"><img src="jleepic.png"></div>
 				
-				    </div>
+						<div id="about-pic-padding-square"></div>
 
-			    </div>
-			    </div>
+						<div id="about-pic-padding"></div>
+						<div id="about-text-content">
+							<h1>ABOUT</h1>
+							<div id="about-text">
+							<div class="regular-text">I'm a graduate from Renneselear Polytechnic Institute with a dual major in Games & Simulation Arts and Sciences and Computer Science (I know, it's a mouthful).
+								When I'm not playing games, I can be usually found making them in my spare time, or buried in some document or text book learning to further my craft.
+		<br>
+		I'm always looking for new people to connect with and share ideas, so feel free to contact me!</div></div>
+
+							<div id="contact-info">
+								<div id ="email">
+									<div id ="email-img"><img src="mail-icon.png"></div>
+									<a id="email-text" href="mailto:Mbjaylee@hotmail.com"> <div id="email-text">Mbjaylee@hotmail.com</div></a>
+								</div>
+								<div id ="phone">
+									<div id ="phone-img"><img src="phone-icon.png"></div>
+									<div id="phone-text">(203) 313-8375</div>
+
+								</div>
+						
+							</div>
+
+						</div>
+			    	</div>
+				</div>
 			</div>
-		    </div>
 		    <!-- about page end -->
 
-		    <!-- work page begin -->
+			<!-- work page begin -->
+			<div id="work-container-boss">
 		    <div id ="work-container">
-		    </div>
+				<div id ="work-content">
+					<div id="work-title-container">
+						<h1>WORK</h1>
+					</div>
+					<div id="work-title-triangle"></div>
+					<div id="games-container">
+
+						<!-- Grief for Glory -->
+						<div class="game-box">
+							<div id="cow-container"><!--<img src="cogsofwar.png">-->
+								<div class = "clear-box"></div>
+
+								<div class="game-text-container">
+									<div class="game-genre">moba
+									</div>
+									<div class="game-title">Cogs of War
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!-- Cogs of War -->
+						<div class="game-box">
+							<div id="gg-container"><!--<img src="griefforglory.png">-->
+								<div class = "clear-box"></div>
+								<div class="game-text-container">
+									<div class="game-genre">action
+									</div>
+									<div class="game-title">Grief for Glory
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+		</div></div>
 		    <!-- work page end -->
 
 		    <!-- doodle page begin -->
@@ -76,7 +117,7 @@
 
 		    <div id ="footer-info">
 			<div id="footer-pusher"></div><div id="nav-info">CLICK OR TYPE
-			    <br>TO BEGIN</div>
+			    <br> <div class="blue-text">TO START</div></div>
 			<div id="nav-info-triangle"></div>
 
 		    </div>
