@@ -50,7 +50,9 @@ body {
 /* navigation bar */
 .wrapper {
   min-height: 100%;
-  margin: 0 auto -350px;
+  margin-top: 0;
+  margin-right: auto;
+  margin-bottom: -350px;
   /* the bottom margin is the negative value of the footer's height */ }
 
 .footer, .wrapper.after {

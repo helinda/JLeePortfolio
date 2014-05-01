@@ -136,7 +136,9 @@ body {
 
 .wrapper {
 	min-height: 100%;
-	margin: 0 auto $negnavheight; /* the bottom margin is the negative value of the footer's height */
+	margin-top: 0; 
+	margin-right: auto;
+       	margin-bottom: $negnavheight; /* the bottom margin is the negative value of the footer's height */
 }
 
 .footer, .wrapper.after {
