@@ -10,12 +10,13 @@ var currentView = 0,
     startView = 3,
     aboutView = 2,
     workView = 1,
-	workItemView = 1.5;
+    COWView = 1.5;
 
 var barMinimized = false;
 
 // COLORS ----------
-var highlightColor = '#3981ea',
+var darkGrey = '#101011',
+    highlightColor = '#3981ea',
     blueGlowColor = "#0b7aff",
     whiteGlowColor = '#c0e0ff',
     brightBlue = '#3981ea',
@@ -57,6 +58,8 @@ function setTimeoutHelp() {
 	Help2;
 }
 
+/** open START view **/
+
 function animateOpenStartView() {
     	currentView = startView;
    	$('#start-container').fadeIn(fadeInTime);
@@ -77,7 +80,7 @@ function openStartView() {
 		if (currentView == aboutView) {
 			animateCloseAboutView();
 		}
-		else if (currentView == workView) {
+		else if ((currentView == workView) || (currentView == COWView)) {
 			animateCloseWorkView();
 		}
 		Help1 = window.setTimeout(useNavHelp,fadeInTime*3);
@@ -113,7 +116,7 @@ function openAboutView() {
 			animateCloseStartView();
 			animateOpenAboutView();
 		}
-		else if (currentView == workView) {
+		else if ((currentView == workView) || (currentView == COWView)) {
 			animateCloseWorkView();
 			setTimeout(animateOpenAboutView, fadeOutTime);
 		}
@@ -134,7 +137,10 @@ function animateCloseWorkView(){
 	$('#work-container-boss').fadeOut(1000);
 	$('#work-container').animate({top: '-400px'}, 1000, "swing");
 	$('#nav-w').animate({backgroundColor: buttonGrey, color: primaryBlue}, 500);
-	setTimeout(function(){$('#games-container').css({display: 'block'});;}, 1000);
+	setTimeout(function(){$('#games-container').css({display: 'block'});}, 1000);
+	revertWorkTitle();
+	hideCOW();
+
 }
 
 function openWorkView () {
@@ -147,15 +153,54 @@ function openWorkView () {
 			animateCloseAboutView();
 			setTimeout(animateOpenWorkView, fadeOutTime);
 		}
+		else if (currentView == COWView) {
+			hideCOW();
+			setTimeout(animateOpenWorkView, fadeOutTime);
+		}
 		maximizeNavBar();		
 	}
 }
 
+var projectViewOn = false;
+function changeWorkTitle() {
+	if (projectViewOn) {
+		$('#work-title').animate({fontSize: '16px'}, 500);
+		$('#work-title-container').animate({height: '30px', width: '110px', opacity: 0.5/*backgroundColor: 'transparent'*/},500);
+		$('#work-title-triangle').animate({borderBottomWidth: '40px', borderRightWidth: '40px', opacity: 0.5/*, borderBottomColor: 'transparent', borderRightColor: 'transparent'*/}, 500); 
 
-/** opening Cogs of War **/
+	}
+}
+
+function revertWorkTitle() {
+	if (projectViewOn) {
+		$('#work-title').animate({fontSize: '24px'}, 500);
+		$('#work-title-container').animate({height: '40px', width: '150px', opacity: '1.0'},500);
+		$('#work-title-triangle').animate({borderBottomWidth: '50px', opacity: '1.0'}, 500); 
+
+
+	}
+}
+
+/** Cogs of War **/
+
 
 function openCOW () {
 	$('#games-container').fadeOut(fadeOutTime);
+	$('#cowinfo-container').fadeIn(fadeInTime);
+	setTimeout(function() {$('#cow-bg').fadeIn(fadeInTime);}, 250);
+	minimizeNavBar();
+	projectViewOn = true;
+	currentView = COWView;
+	changeWorkTitle();
+}
+
+function hideCOW() {
+	setTimeout(function(){$('#games-container').fadeIn(fadeInTime);},fadeOutTime);
+	$('#cow-bg').fadeOut(fadeOutTime);
+	maximizeNavBar();
+	revertWorkTitle();
+	projectViewOn = false;
+	$('#cowinfo-container').fadeOut(fadeOutTime);
 }
 
 
@@ -222,7 +267,10 @@ $(document).ready(function(){
 
 /*animateOpenWorkView();*/
 
-    /*animateOpenStartView();*/ 
+    openStartView();
+
+    /*animateOpenWorkView();
+    openCOW();*/
 
     $('#footer-info').click(function() {
 	    ridNavHelp();
