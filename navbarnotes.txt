@@ -1,0 +1,80 @@
+changed:
+
+wrapper
+	margin: 0 auto -280px;
+
+nav-content
+	height: 80px;
+name
+	size: 21px
+title 
+	size: 9px
+nav-content-wrapper
+	padding: 20px;
+nav-bottom
+	height: 30px
+nav-bt
+	width: 40px;
+	height: 25px;
+	font-size: 20px
+
+nav-square-container
+	margin-top: -30px
+	padding: 20px 50px 20px 50px
+	width: 150px
+	height: 60px
+
+first layer
+	width: 63px
+	height: 30px
+	padding-bottom: 2px
+
+nav-triangle
+	border-bottom: 30px solid #101011
+
+nav-triangle-container 
+	margin-top: 40px
+
+
+
+
+original:
+
+wrapper
+	margin: 0 auto $negnavheight
+
+nav-content
+	height: nav-content-height
+
+name:
+	font-size: title-size
+title:
+	font-size: text-size
+nav-content-wrapper
+	padding: 20px
+nav-bottom: 
+	height: 60px
+nav-bt
+	width: 80px
+	height: 45px;
+	font-size: 32px;
+
+nav-square-container
+	margin-top: -10px
+	padding: 0px;
+	width: 270px;
+	height: 100px;
+
+first-layer
+	width: 90px;
+	height: 0px;
+	padding-bottom: 0px;
+
+nav-triangle
+	border-bottom: 50px solid $dark-grey
+
+nav-triangle-container
+	margin-top: 20px
+ 
+
+
