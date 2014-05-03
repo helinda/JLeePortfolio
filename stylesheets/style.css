@@ -9,6 +9,24 @@ h1 {
   letter-spacing: 8px;
   padding-bottom: 15px; }
 
+h2 {
+  color: #2c5bc4;
+  font-size: 12px;
+  font-family: "Open Sans", Arial, sans-serif;
+  letter-spacing: 1px;
+  padding-bottom: 20px; }
+
+.grey-text {
+  color: #565656;
+  font-size: 11px;
+  font-family: "Open Sans", Arial, sans-serif; }
+
+.light-grey-text {
+  color: #848484;
+  font-size: 13px;
+  font-family: "Open Sans", Arial, sans-serif;
+  line-height: 20px; }
+
 a {
   -webkit-transition: color 0.2s linear;
   -moz-transition: color 0.2s linear;
@@ -596,12 +614,14 @@ body {
   display: none;
   position: absolute;
   width: 700px;
-  height: 700px;
+  height: 1700px;
   background: #101011;
   opacity: 0.95;
-  margin-top: 50px; }
+  margin-top: 90px;
+  margin-bottom: 15%; }
 
 #cow-bg {
+  display: none;
   position: fixed;
   z-index: -9;
   background-image: url("../cow-bg-img.png");
@@ -612,8 +632,91 @@ body {
 
 #cowinfo-title {
   color: white;
-  font-size: 20px; }
+  font-size: 20px;
+  float: left;
+  background: #101011;
+  opacity: 0.95;
+  width: 300px;
+  height: 20px;
+  padding: 20px 10px 10px 30px; }
 
 #cowinfo-title-container {
-  background: #101011;
-  opacity: 0.95; }
+  height: 50px;
+  margin-top: -20px;
+  width: 100%; }
+
+#cowinfo-title-triangle {
+  float: left;
+  width: 0;
+  height: 0;
+  border-bottom: 50px solid #101011;
+  border-right: 50px solid transparent;
+  opacity: 0.95;
+  margin-top: -15px; }
+
+#cow-main-container {
+  width: 620px;
+  padding: 30px 40px 30px 40px;
+  height: 1700px; }
+
+.essential-info {
+  float: left;
+  width: 300px; }
+
+.info-section {
+  margin-bottom: 15px; }
+
+#cow-poster {
+  float: left;
+  width: 300px;
+  height: 220px;
+  margin-left: 20px;
+  background-image: url("../cowposter.png"); }
+
+.game-specs {
+  width: 620px;
+  height: 242px;
+  margin-bottom: 30px; }
+
+.game-about {
+  width: 620px;
+  height: 270px;
+  margin-bottom: 30px; }
+
+.game-trailer-video {
+  width: 580px;
+  height: 370px;
+  margin-left: 20px; }
+
+.game-trailer {
+  width: 620px;
+  height: 430px;
+  margin-bottom: 30px; }
+
+.game-screenshots {
+  width: 620px;
+  height: 360px;
+  margin-bottom: 30px; }
+
+.game-screenshot-row1 {
+  padding-left: 15px;
+  width: 605px;
+  height: 140px;
+  /*	background: black;*/ }
+
+.game-screenshot-row2 {
+  padding-left: 15px;
+  width: 605px;
+  height: 140px;
+  /*	background: black;*/ }
+
+.game-ss {
+  float: left;
+  width: 190px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  height: 140px;
+  background: white; }
+
+.text-wrapper {
+  margin-left: 20px; }

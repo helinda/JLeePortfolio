@@ -28,6 +28,7 @@ $negnavheight: -350px; /* originally: -230px */
 $nav-content-height: 120px;
 $nav-content-inner-height: 100px;
 $nav-content-padding: 20px;
+$height-info-container: 1700px;
 
 $dark-opacity: 0.95;
 $light-opacity: 0.7;
@@ -92,6 +93,27 @@ h1 {
 	font-family: $title-font;
        	letter-spacing: 8px;
 	padding-bottom: 15px;
+}
+
+h2 {
+	color: $primary-blue;
+	font-size: 12px;
+	font-family: $text-font;
+	letter-spacing: 1px;
+	padding-bottom: 20px;
+}
+
+.grey-text {
+	color: $light-grey;
+	font-size: 11px;
+	font-family: $text-font;
+}
+
+.light-grey-text {
+	color: $font-grey;
+	font-size: 13px;
+	font-family: $text-font;
+	line-height: 20px;
 }
 
 a {
@@ -683,13 +705,15 @@ $margin-right-modified: $margin-right - 20px;
 	display: none;
 	position: absolute;
 	width: 700px;
-	height: 700px;
+	height: $height-info-container;
 	background: $dark-grey;
 	opacity: $dark-opacity;
-	margin-top: 50px;
+	margin-top: 90px;
+	margin-bottom: 15%;
 }
 
 #cow-bg {
+	display: none;
 	position: fixed;
 	z-index: -9;
 	background-image: url('../cow-bg-img.png');
@@ -702,10 +726,112 @@ $margin-right-modified: $margin-right - 20px;
 #cowinfo-title {
 	color: white;
 	font-size: 20px;
+	float: left;
+	background: $dark-grey;
+	opacity: $dark-opacity;
+	width: 300px;
+	height: 20px;
+	padding: 20px 10px 10px 30px;
 }
 
 #cowinfo-title-container {
-	background: $dark-grey;
-	opacity: $dark-opacity;
+	height: 50px;
+	margin-top: -20px;
+	width: 100%;
 }
 
+#cowinfo-title-triangle {
+	float: left;
+	width: 0;
+	height: 0;
+	border-bottom: 50px solid $dark-grey;
+	border-right: 50px solid transparent;
+	opacity: $dark-opacity;
+	margin-top: -15px;
+}
+
+#cow-main-container {
+//	background: gray;
+	width: 620px;
+	padding: 30px 40px 30px 40px;
+	height: $height-info-container;
+}
+
+.essential-info {
+	float: left;
+	width:300px;
+//	background: black;
+}
+
+.info-section {
+	margin-bottom: 15px;
+}
+
+#cow-poster {
+	float: left;
+	width: 300px;
+	height: 220px;
+	margin-left: 20px;
+	background-image: url('../cowposter.png');
+}
+
+.game-specs {
+	width: 620px;
+	height: 242px;
+//	background: black;
+	margin-bottom: 30px;
+}
+
+.game-about {
+	width: 620px;
+	height: 270px;
+//	background: black;
+	margin-bottom: 30px;
+}
+
+.game-trailer-video{
+	width: 580px;
+	height: 370px;
+	margin-left: 20px;
+}
+
+.game-trailer {
+	width: 620px;
+	height: 430px;
+//	background: black;
+	margin-bottom: 30px;
+}
+
+.game-screenshots {
+	width: 620px;
+	height: 360px;
+//	background: black;
+	margin-bottom: 30px;
+}
+
+.game-screenshot-row1 {
+	padding-left: 15px;
+	width: 605px;
+	height: 140px;
+/*	background: black;*/	
+}
+
+.game-screenshot-row2 {
+	padding-left: 15px;
+	width: 605px;
+	height: 140px;
+/*	background: black;*/
+}
+
+.game-ss {
+	float: left;
+	width: 190px;
+	margin-right: 10px;
+	margin-bottom: 10px;
+	height: 140px;
+	background: white;
+}
+
+.text-wrapper {
+	margin-left: 20px;
+}

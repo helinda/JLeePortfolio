@@ -197,6 +197,7 @@ function openCOW () {
 function hideCOW() {
 	setTimeout(function(){$('#games-container').fadeIn(fadeInTime);},fadeOutTime);
 	$('#cow-bg').fadeOut(fadeOutTime);
+	$('#cow-bg').fadeOut(fadeOutTime);
 	maximizeNavBar();
 	revertWorkTitle();
 	projectViewOn = false;
