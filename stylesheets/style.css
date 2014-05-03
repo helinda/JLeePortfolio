@@ -65,6 +65,42 @@ body {
 #content {
   height: 100%; }
 
+#modal-container {
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: none;
+  z-index: 100; }
+
+#modal-overlay {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  z-index: 100;
+  background: black;
+  opacity: 0.7; }
+
+#modal-box {
+  width: 800px;
+  height: 500px;
+  background: #565656;
+  z-index: 101;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  top: 10%;
+  margin-bottom: 10px; }
+
+#modal-message {
+  font-family: "Open Sans", Arial, sans-serif;
+  size: 12px;
+  color: #565656;
+  padding-top: 510px;
+  text-align: center;
+  position: relative;
+  z-index: 101; }
+
 /* navigation bar */
 .wrapper {
   min-height: 100%;
@@ -716,7 +752,69 @@ body {
   margin-right: 10px;
   margin-bottom: 10px;
   height: 140px;
-  background: white; }
+  background: #565656;
+  cursor: pointer; }
 
 .text-wrapper {
   margin-left: 20px; }
+
+/* *** GG INFO CONTENT *** */
+#gginfo-container {
+  display: none;
+  position: absolute;
+  width: 700px;
+  height: 1700px;
+  background: #101011;
+  opacity: 0.95;
+  margin-top: 90px;
+  margin-bottom: 15%; }
+
+#gg-bg {
+  display: none;
+  position: fixed;
+  z-index: -9;
+  background-image: url("../gg-bg-img.png");
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  opacity: 0.2; }
+
+#gginfo-title {
+  color: white;
+  font-size: 20px;
+  float: left;
+  background: #101011;
+  opacity: 0.95;
+  width: 350px;
+  height: 20px;
+  padding: 20px 10px 10px 30px; }
+
+#gginfo-title-container {
+  height: 50px;
+  margin-top: -20px;
+  width: 100%; }
+
+#gginfo-title-triangle {
+  float: left;
+  width: 0;
+  height: 0;
+  border-bottom: 50px solid #101011;
+  border-right: 50px solid transparent;
+  opacity: 0.95;
+  margin-top: -15px; }
+
+#gg-main-container {
+  width: 620px;
+  padding: 30px 40px 30px 40px;
+  height: 1700px; }
+
+#gg-poster {
+  float: left;
+  width: 156px;
+  height: 240px;
+  margin-left: 20px;
+  background-image: url("../ggposter.png");
+  margin-right: 30px; }
+
+#gg-push {
+  height: 10px; }

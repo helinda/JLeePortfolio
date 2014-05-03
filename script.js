@@ -10,7 +10,9 @@ var currentView = 0,
     startView = 3,
     aboutView = 2,
     workView = 1,
-    COWView = 1.5;
+    COWView = 1.33,
+    GGView = 1.66,
+    screenShotView = 1.1;
 
 var barMinimized = false;
 
@@ -80,7 +82,7 @@ function openStartView() {
 		if (currentView == aboutView) {
 			animateCloseAboutView();
 		}
-		else if ((currentView == workView) || (currentView == COWView)) {
+		else if ((currentView == workView) || (currentView == COWView) || (currentView == GGView)) {
 			animateCloseWorkView();
 		}
 		Help1 = window.setTimeout(useNavHelp,fadeInTime*3);
@@ -111,12 +113,13 @@ function animateCloseAboutView() {
 }
 
 function openAboutView() {
+	ridNavHelp();
 	    if (currentView != aboutView) {
 		if (currentView == startView) {
 			animateCloseStartView();
 			animateOpenAboutView();
 		}
-		else if ((currentView == workView) || (currentView == COWView)) {
+		else if ((currentView == workView) || (currentView == COWView) || (currentView == GGView)) {
 			animateCloseWorkView();
 			setTimeout(animateOpenAboutView, fadeOutTime);
 		}
@@ -140,10 +143,12 @@ function animateCloseWorkView(){
 	setTimeout(function(){$('#games-container').css({display: 'block'});}, 1000);
 	revertWorkTitle();
 	hideCOW();
+	hideGG();
 
 }
 
 function openWorkView () {
+    	ridNavHelp();
 	if (currentView != workView) {
 		if (currentView == startView) {
 			animateCloseStartView();
@@ -155,6 +160,10 @@ function openWorkView () {
 		}
 		else if (currentView == COWView) {
 			hideCOW();
+			setTimeout(animateOpenWorkView, fadeOutTime);
+		}
+		else if (currentView == GGView) {
+			hideGG();
 			setTimeout(animateOpenWorkView, fadeOutTime);
 		}
 		maximizeNavBar();		
@@ -185,6 +194,7 @@ function revertWorkTitle() {
 
 
 function openCOW () {
+    	ridNavHelp();
 	$('#games-container').fadeOut(fadeOutTime);
 	$('#cowinfo-container').fadeIn(fadeInTime);
 	setTimeout(function() {$('#cow-bg').fadeIn(fadeInTime);}, 250);
@@ -195,6 +205,7 @@ function openCOW () {
 }
 
 function hideCOW() {
+    	ridNavHelp();
 	setTimeout(function(){$('#games-container').fadeIn(fadeInTime);},fadeOutTime);
 	$('#cow-bg').fadeOut(fadeOutTime);
 	$('#cow-bg').fadeOut(fadeOutTime);
@@ -202,6 +213,30 @@ function hideCOW() {
 	revertWorkTitle();
 	projectViewOn = false;
 	$('#cowinfo-container').fadeOut(fadeOutTime);
+}
+
+/** Grief for Glory **/
+
+function openGG() {
+    	ridNavHelp();
+	$('#games-container').fadeOut(fadeOutTime);
+	$('#gginfo-container').fadeIn(fadeInTime);
+	setTimeout(function() {$('#gg-bg').fadeIn(fadeInTime);}, 250);
+	minimizeNavBar();
+	projectViewOn = true;
+	currentView = GGView;
+	changeWorkTitle();
+}
+
+function hideGG() {
+	setTimeout(function(){$('#games-container').fadeIn(fadeInTime);},fadeOutTime);
+	$('#gg-bg').fadeOut(fadeOutTime);
+	maximizeNavBar();
+	revertWorkTitle();
+	projectViewOn = false;
+	$('#gginfo-container').fadeOut(fadeOutTime);
+
+	
 }
 
 
@@ -255,20 +290,23 @@ function maximizeNavBar() {
 		$('#first-layer').animate({width: '90px', height: '0px', paddingBottom: '0px'}, 500);
 		$('#nav-triangle').animate({opacity: '1.0'}, 500);
 		$('#nav-square-container').animate({backgroundColor: 'transparent'}, 100);
-		setTimeout( function() { $('#nav-square-container').fadeIn(500); }, 500);
+		setTimeout( function() { $('#nav-square-container').fadeIn(500); }, 50);
 		barMinimized = false;} , 50);
 	}
 }
 
 
 
+window.onload = function() {
+	openStartView();
+}
 
 
 $(document).ready(function(){
 
 /*animateOpenWorkView();*/
 
-    openStartView();
+ /*   openStartView();*/
 
     /*animateOpenWorkView();
     openCOW();*/
@@ -298,10 +336,19 @@ $(document).ready(function(){
 		openCOW();
 	});
 
+	$('#gg-container').click( function() {
+		minimizeNavBar();
+		openGG();
+	});
+
 
 	document.addEventListener('keydown', function(event) {
 		if(event.keyCode == 87) { // w
-		openWorkView();
+		    if (currentView == screenShotView) {
+			
+		    } else {
+			openWorkView();
+		    }
 		}
 		else if(event.keyCode == 65 ) { // a 
 		openAboutView();
@@ -310,6 +357,10 @@ $(document).ready(function(){
 		openStartView();
 		}
 		else if(event.keyCode == 68 ) { // d
+		   /* if (currentView == screenShotView) {
+
+			$('#modal-box').animate({backgroundImage: 'url(images/'+name+')'}, 500);	
+		    }*/
 		alert("d was pressed");
 		}
 
@@ -327,6 +378,51 @@ $(document).ready(function(){
 
 
 
+
+	function openModalView(id) {
+		var name = id + '-large.png';
+		$('#modal-box').css({backgroundImage: 'url(images/'+name+')'});
+		$('#modal-box').css({marginTop: document.body.scrollTop + 30 + 'px'});
+		setTimeout(function(){$('#modal-container').fadeIn(fadeOutTime);},100);
+		currentView = screenShotView;
+	}
+
+	function closeModalView() {
+		$('#modal-container').fadeOut(fadeOutTime);
+		currentView = workView;
+	}
+
+	$('#ggss1').click( function() {
+	/*	openModalView();*/
+    		openModalView(this.id);		
+	});
+	$('#ggss2').click( function() {
+	/*	openModalView();*/
+    		openModalView(this.id);		
+	});
+	$('#ggss3').click( function() {
+	/*	openModalView();*/
+    		openModalView(this.id);		
+	});
+	$('#ggss4').click( function() {
+	/*	openModalView();*/
+    		openModalView(this.id);		
+	});
+	$('#ggss5').click( function() {
+	/*	openModalView();*/
+    		openModalView(this.id);		
+	});
+	$('#ggss6').click( function() {
+	/*	openModalView();*/
+    		openModalView(this.id);		
+	});
+
+	$('#modal-overlay').click(function () {
+		closeModalView();
+	});
+	$('#modal-box').click(function() {
+		closeModalView();
+	});
 
 
 
