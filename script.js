@@ -74,7 +74,7 @@ function animateCloseStartView() {
 	clearTimeout(Help1);
 	clearTimeout(Help2);
 	$('#start-container').fadeOut(fadeOutTime);
-	$('#nav-s').animate({backgroundColor: buttonGrey, color: primaryBlue}, 500);
+	$('#nav-s').animate({background: buttonGrey, color: primaryBlue}, 500);
 }
 
 function openStartView() {
@@ -99,7 +99,7 @@ function animateOpenAboutView() {
 	$('#about-container').fadeIn(1000);
         var left = ( $(window).width() - $('#about-content').width() ) / 2+$(window).scrollLeft() + "px";	
 	$('#about-content').animate({left: left},1000,"swing");
-	$('#nav-a').animate({backgroundColor: buttonHoverGrey, color: brightBlue}, 500);
+	$('#nav-a').animate({background: buttonHoverGrey, color: brightBlue}, 500);
 
 
 	/*$('#about-content').animate({marginLeft: "auto"},1000,"swing");*/
@@ -108,7 +108,7 @@ function animateOpenAboutView() {
 function animateCloseAboutView() {
 	$('#about-container').fadeOut(1000);
 	$('#about-content').animate({left: '-800px'},1000,"swing");
-	$('#nav-a').animate({backgroundColor: buttonGrey, color: primaryBlue}, 500);
+	$('#nav-a').animate({background: buttonGrey, color: primaryBlue}, 500);
 
 }
 
@@ -139,7 +139,7 @@ function animateOpenWorkView() {
 function animateCloseWorkView(){
 	$('#work-container-boss').fadeOut(1000);
 	$('#work-container').animate({top: '-400px'}, 1000, "swing");
-	$('#nav-w').animate({backgroundColor: buttonGrey, color: primaryBlue}, 500);
+	$('#nav-w').animate({background: buttonGrey, color: primaryBlue}, 500);
 	setTimeout(function(){$('#games-container').css({display: 'block'});}, 1000);
 	revertWorkTitle();
 	hideCOW();

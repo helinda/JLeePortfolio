@@ -267,12 +267,12 @@ $margin-right-modified: $margin-right - 20px;
 }
 
 .nav-bt {
-    	@include shadow-hover-effect;
-	@include text-hover-effect;
-	@include bg-hover-effect;
+//    	@include shadow-hover-effect;
+//	@include text-hover-effect;
+//	@include bg-hover-effect;
 	width: 80px;
 	height: 45px;
-	background: $button-grey;
+//	background: $button-grey;
 	float: left;
 	margin: 0 10px 10px 0px;
 	font: 100% $text-font;
@@ -282,12 +282,12 @@ $margin-right-modified: $margin-right - 20px;
 }
 
 
-.nav-bt:hover {
+/*.nav-bt:hover {
 	text-shadow: 0 0 10px $bright-blue;
 	color: $light-blue;
 	background: $button-hover-grey; 
 	cursor: pointer;
-}
+}*/
 
 
 #first-layer {
